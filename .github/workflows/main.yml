@@ -43,8 +43,12 @@ jobs:
         # - run: npm test
   run-tests:
     runs-on: ubuntu-latest
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v3
-      - name: jest-test
-        run: npm test
+      steps:
+        - name: Sleep for 10s
+          uses: juliangruber/sleep-action@v1
+            with:
+          time: 60s
+        - name: Checkout
+          uses: actions/checkout@v3
+        - name: jest-test
+            run: npm test
