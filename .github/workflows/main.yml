@@ -14,6 +14,7 @@ jobs:
         - run: npm --version
         - uses: actions/checkout@v3
         - run: npm install
-        - run: microservices/users/users.js
-        - run: microservices/users/payments.js
-        - run: microservices/users/orders.js
+        - run: node test.js
+        #- run: microservices/users/users.js
+        #- run: microservices/users/payments.js
+        #- run: microservices/users/orders.js
