@@ -28,11 +28,23 @@ jobs:
         #- run: node microservices/users/users.js
         - run: node microservices/users/payments.js
         #- run: node microservices/users/orders.js
+  buildorders:
+    runs-on: ubuntu-latest
+    container: node:16
+    steps:
+        - run: node --version
+        - run: npm --version
+        - uses: actions/checkout@v3
+        - run: npm install
+        - run: node main.js
+        #- run: node microservices/users/users.js
+        #- run: node microservices/users/payments.js
+        - run: node microservices/users/orders.js
         # - run: npm test
-  # run-tests:
-  #   runs-on: ubuntu-latest
-  #   steps:
-  #     - name: Checkout
-  #       uses: actions/checkout@v3
-  #     - name: jest-test
-  #       run: npm test
+  run-tests:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+      - name: jest-test
+        run: npm test
