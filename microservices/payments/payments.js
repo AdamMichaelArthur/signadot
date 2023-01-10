@@ -2,7 +2,7 @@ const express = require('express');
 
 const app = express();
 
-app.get('/updateSubscription', (req, res) => {
+app.post('/updateSubscription', (req, res) => {
 	res.status(200);
 	res.json({ "subscription_updated": true });
 });

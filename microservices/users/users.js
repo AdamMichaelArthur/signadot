@@ -4,7 +4,7 @@ const axios = require("axios");
 const app = express();
 
 app.get('/getSubscriptions', (req, res) => {
-  res.status(400)
+  res.status(200)
   res.json({"working": true})
 });
 
