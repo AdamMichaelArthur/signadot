@@ -6,17 +6,14 @@ on:
       - main
 
 jobs:
-  run-tests:
+  build-node:
     runs-on: ubuntu-latest
+    container: node:16
     steps:
-      - name: Checkout
-        uses: actions/checkout@v2
-      # Install NPM dependencies, cache them correctly
-      # and run all Cypress tests
-      - name: Cypress run
-        uses: cypress-io/github-action@v2
-        with:
-          build: npm run build
-          start: npm start
-      - name: Jest run
-        run: npm test
+        - run: node --version
+        - run: npm --version
+        - uses: actions/checkout@v3
+        - run: npm install
+        - run: microservices/users/users.js
+        - run: microservices/users/payments.js
+        - run: microservices/users/orders.js
