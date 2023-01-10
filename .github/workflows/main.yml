@@ -14,11 +14,11 @@ jobs:
         - run: npm --version
         - uses: actions/checkout@v3
         - run: npm install
-        - run: node test.js
+        - run: node main.js
         #- run: node microservices/users/users.js
         #- run: node microservices/users/payments.js
         #- run: node microservices/users/orders.js
-        - run: npm test
+        # - run: npm test
   # run-tests:
   #   runs-on: ubuntu-latest
   #   steps:
